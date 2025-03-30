@@ -24,12 +24,13 @@ public class ExcelProcessorService {
     @Value("${excel.folder.path}")
     private String excelFolderPath;
 
-    private final ExcelDataRepository excelDataRepository;
-
     @Autowired
-    public ExcelProcessorService(ExcelDataRepository excelDataRepository) {
-        this.excelDataRepository = excelDataRepository;
-    }
+    private  ExcelDataRepository excelDataRepository;
+
+//    @Autowired
+//    public ExcelProcessorService(ExcelDataRepository excelDataRepository) {
+//        this.excelDataRepository = excelDataRepository;
+//    }
 
     // ✅ API 1: Process recent files (Latest 2)
     public List<Map<String, Object>> processRecentExcelFiles() throws IOException {

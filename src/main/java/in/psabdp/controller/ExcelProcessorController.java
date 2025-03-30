@@ -49,7 +49,7 @@ public class ExcelProcessorController {
 
     // ✅ API 3: Get pass/fail count for a selected date
     @GetMapping("/data-by-date")
-    public ResponseEntity<Map<String, Integer>> getDataByDate(@RequestParam String date) {
+    public ResponseEntity<Map<String, Integer>> getDataByDate(@RequestParam("date") String date) {
         try {
             Map<String, Integer> data = excelProcessorService.getDataByDate(date);
             return data.isEmpty() ? ResponseEntity.noContent().build() : ResponseEntity.ok(data);
